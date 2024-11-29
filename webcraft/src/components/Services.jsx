@@ -16,7 +16,18 @@ const services = [
     description: 'We help you reach your target audience and grow your online presence.',
     icon: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z',
   },
+  {
+    title: 'SEO Optimization',
+    description: 'We improve your website’s visibility in search engines to attract more traffic.',
+    icon: 'M3 10h11M9 21V3m8 18l-3-3m0 0l3-3m-3 3H3',
+  },
+  {
+    title: 'E-Commerce Solutions',
+    description: 'We build scalable and secure online stores to enhance your e-commerce business.',
+    icon: 'M4 6h16M4 10h16M4 14h16M4 18h16',
+  },
 ];
+
 
 const Services = () => {
   return (

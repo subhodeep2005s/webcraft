@@ -16,6 +16,21 @@ const projects = [
     description: 'A mobile-first web app for tracking workouts and nutrition.',
     image: 'https://img.youtube.com/vi/jbfuzcrfjqQ/maxresdefault.jpg',
   },
+  {
+    title: 'E-commerce Platform',
+    description: 'A fully responsive online store with seamless checkout experience.',
+    image: 'https://img.youtube.com/vi/9jRTo7ILxQc/maxresdefault.jpg',
+  },
+  {
+    title: 'Social Media Dashboard',
+    description: 'An intuitive dashboard for managing multiple social media accounts.',
+    image: 'https://img.youtube.com/vi/amFYvQK4huo/maxresdefault.jpg',
+  },
+  {
+    title: 'Fitness Tracking App',
+    description: 'A mobile-first web app for tracking workouts and nutrition.',
+    image: 'https://img.youtube.com/vi/yU_JgeAIRko/maxresdefault.jpg',
+  },
 ];
 
 const Portfolio = () => {
