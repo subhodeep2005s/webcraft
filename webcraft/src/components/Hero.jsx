@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MessageCircle } from 'lucide-react';
+import CallbackForm from './CallbackForm';
 
 const Hero = () => {
+  const [isCallbackFormOpen, setIsCallbackFormOpen] = useState(false);
+
   return (
     <div className="relative bg-gradient-to-r from-indigo-600 to-purple-700 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -19,7 +22,7 @@ const Hero = () => {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
                   <a
-                    href="https://wa.me/9851607357" // Replace with your actual WhatsApp number
+                    href="https://wa.me/918597722752" // Updated with your WhatsApp number
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10"
@@ -30,10 +33,7 @@ const Hero = () => {
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <button
-                    onClick={() => {
-                      // Implement your callback request logic here
-                      console.log('Callback requested');
-                    }}
+                    onClick={() => setIsCallbackFormOpen(true)}
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 md:py-4 md:text-lg md:px-10"
                   >
                     <Phone className="w-5 h-5 mr-2" />
@@ -45,6 +45,10 @@ const Hero = () => {
           </main>
         </div>
       </div>
+      <CallbackForm
+        isOpen={isCallbackFormOpen}
+        onClose={() => setIsCallbackFormOpen(false)}
+      />
     </div>
   );
 };

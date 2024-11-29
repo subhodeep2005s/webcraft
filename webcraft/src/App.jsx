@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AdminPanel from './pages/AdminPanel';
 import './App.css';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/admin" element={<AdminPanel />} />
         </Routes>
         <Footer />
+        < WhatsAppButton/>
       </div>
     </Router>
   );
