@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import AdminPanel from './pages/AdminPanel';
-import './App.css';
+import AdminPage from './pages/AdminPage.js';
 import WhatsAppButton from './components/WhatsAppButton';
+import './App.css';
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
         <Footer />
-        < WhatsAppButton/>
+        <WhatsAppButton />
       </div>
     </Router>
   );

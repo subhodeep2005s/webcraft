@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 import { Menu, X, Home, Briefcase, Users, Mail, Settings } from 'lucide-react';
 
 const Header = () => {
@@ -24,7 +25,7 @@ const Header = () => {
     { name: 'Portfolio', to: 'portfolio', icon: <Home className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Testimonials', to: 'testimonials', icon: <Users className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Contact', to: 'contact', icon: <Mail className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
-    { name: 'Admin', to: 'admin', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
+    { name: 'Admin', to: '/admin', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
   ];
 
   return (
@@ -32,10 +33,10 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link to="hero" smooth={true} duration={800} className="cursor-pointer">
+            <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer">
               <span className="sr-only">WebCraft Agency</span>
               <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-600' : 'text-white'}`}>WebCraft</span>
-            </Link>
+            </ScrollLink>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button
@@ -49,17 +50,29 @@ const Header = () => {
           </div>
           <nav className="hidden md:flex space-x-10">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.to}
-                smooth={true}
-                duration={800}
-                className={`text-base font-medium ${
-                  isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-gray-300'
-                } cursor-pointer transition-colors duration-300 hover:underline`}
-              >
-                {item.name}
-              </Link>
+              item.name === 'Admin' ? (
+                <RouterLink
+                  key={item.name}
+                  to={item.to}
+                  className={`text-base font-medium ${
+                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-gray-300'
+                  } cursor-pointer transition-colors duration-300 hover:underline`}
+                >
+                  {item.name}
+                </RouterLink>
+              ) : (
+                <ScrollLink
+                  key={item.name}
+                  to={item.to}
+                  smooth={true}
+                  duration={800}
+                  className={`text-base font-medium ${
+                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-gray-300'
+                  } cursor-pointer transition-colors duration-300 hover:underline`}
+                >
+                  {item.name}
+                </ScrollLink>
+              )
             ))}
           </nav>
         </div>
@@ -74,9 +87,9 @@ const Header = () => {
         <div className="pt-5 pb-6 px-5">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <Link to="hero" smooth={true} duration={800} className="text-2xl font-bold text-indigo-600" onClick={toggleMenu}>
+              <ScrollLink to="hero" smooth={true} duration={800} className="text-2xl font-bold text-indigo-600" onClick={toggleMenu}>
                 WebCraft
-              </Link>
+              </ScrollLink>
             </div>
             <div className="-mr-2">
               <button
@@ -92,17 +105,29 @@ const Header = () => {
           <div className="mt-6">
             <nav className="grid gap-y-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.to}
-                  smooth={true}
-                  duration={800}
-                  className="flex items-center -m-3 p-3 rounded-md hover:bg-gray-50"
-                  onClick={toggleMenu}
-                >
-                  {item.icon}
-                  <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
-                </Link>
+                item.name === 'Admin' ? (
+                  <RouterLink
+                    key={item.name}
+                    to={item.to}
+                    className="flex items-center -m-3 p-3 rounded-md hover:bg-gray-50"
+                    onClick={toggleMenu}
+                  >
+                    {item.icon}
+                    <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                  </RouterLink>
+                ) : (
+                  <ScrollLink
+                    key={item.name}
+                    to={item.to}
+                    smooth={true}
+                    duration={800}
+                    className="flex items-center -m-3 p-3 rounded-md hover:bg-gray-50"
+                    onClick={toggleMenu}
+                  >
+                    {item.icon}
+                    <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
+                  </ScrollLink>
+                )
               ))}
             </nav>
           </div>
@@ -113,3 +138,4 @@ const Header = () => {
 };
 
 export default Header;
+
