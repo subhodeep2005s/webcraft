@@ -145,7 +145,6 @@ const Hero = () => {
                       <Briefcase className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-semibold text-gray-900">Our Services</p>
                       <p className="text-xs text-gray-600">Explore what we offer</p>
                     </div>
                   </div>
@@ -167,12 +166,6 @@ const Hero = () => {
         isOpen={isCallbackFormOpen}
         onClose={() => setIsCallbackFormOpen(false)}
       />
-
-      {/* Services Section - Add an id to the section you want to scroll to */}
-      <div id="services" className="pt-20 pb-12">
-        <h2 className="text-4xl font-bold text-center text-gray-900">Our Services</h2>
-        {/* Add your services content here */}
-      </div>
     </div>
   );
 };
