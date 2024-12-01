@@ -5,7 +5,7 @@ import { Menu, X, Home, Briefcase, Users, Mail, Settings } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true); // Set initial state to true so header is visible
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,4 +138,3 @@ const Header = () => {
 };
 
 export default Header;
-
