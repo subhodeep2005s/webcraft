@@ -167,3 +167,4 @@ const PricingAdmin = () => {
 
 export default PricingAdmin;
 
+// all going good 

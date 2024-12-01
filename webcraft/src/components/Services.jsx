@@ -66,3 +66,4 @@ const Services = () => {
 
 export default Services;
 
+// some adjustment added
