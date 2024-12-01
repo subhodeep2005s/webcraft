@@ -29,13 +29,13 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent '}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer">
-              <span className="sr-only">WebCraft Agency</span>
-              <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-600' : 'text-white'}`}>WebCraft</span>
+              <span className="sr-only  ">WebCraft Agency</span>
+              <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-600' : 'text-indigo-600'}`}>WebCraft</span>
             </ScrollLink>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
@@ -55,7 +55,7 @@ const Header = () => {
                   key={item.name}
                   to={item.to}
                   className={`text-base font-medium ${
-                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-gray-300'
+                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-gray-500  hover:text-gray-300'
                   } cursor-pointer transition-colors duration-300 hover:underline`}
                 >
                   {item.name}
@@ -67,7 +67,7 @@ const Header = () => {
                   smooth={true}
                   duration={800}
                   className={`text-base font-medium ${
-                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-white hover:text-gray-300'
+                    isScrolled ? 'text-gray-500 hover:text-gray-900' : 'text-gray-500  hover:text-gray-300'
                   } cursor-pointer transition-colors duration-300 hover:underline`}
                 >
                   {item.name}

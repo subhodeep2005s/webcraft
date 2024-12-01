@@ -148,9 +148,9 @@ const AdminPage = () => {
 
   if (!isLoggedIn) {
     return (
-      <div style={{ maxWidth: '300px', margin: '100px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+      <div style={{ maxWidth: '300px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Admin Login</h2>
-        <form onSubmit={handleLogin}>
+        <form className='mt-9' onSubmit={handleLogin}>
           <input
             type="text"
             placeholder="Username"
@@ -179,7 +179,7 @@ const AdminPage = () => {
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h1 style={{ fontSize: '24px' }}>Admin Dashboard</h1>
-        <button onClick={handleLogout} style={{ ...buttonStyle, backgroundColor: '#f44336' }}>Logout</button>
+        <button className='mt-100'  onClick={handleLogout} style={{ ...buttonStyle, backgroundColor: '#f44336' }}>Logout</button>
       </div>
 
       <div style={{ marginBottom: '40px' }}>
