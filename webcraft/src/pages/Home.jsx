@@ -4,12 +4,14 @@ import Services from '../components/Services';
 import Portfolio from '../components/Porrtfolio';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
+import Pricing from '../components/Pricing';
 
 function Home() {
   return (
     <>
       <Hero />
       <Services />
+      <Pricing />
       <Portfolio />
       <Testimonials />
       <Contact />
