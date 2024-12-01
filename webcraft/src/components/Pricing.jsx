@@ -95,24 +95,7 @@ const Pricing = () => {
       isPopular: true,
       viewMore: true,
     },
-    {
-      plan: 'Platinum Plan',
-      price: '20,000',
-      features: [
-        '1-year free hosting & free domain',
-        'SSL Certificate',
-        'Unlimited pages',
-        'Shopify website creation and setup',
-        'Android Hybrid App (optional)',
-        'Google Play Publishing',
-        'Social media links integration',
-        'Referral and abandoned checkout system',
-        'Upto 200 products upload by our team',
-        'Appointment booking system',
-      ],
-      examples: 'Real estate websites, Medium-sized e-commerce websites, Fitness club websites',
-      viewMore: true,
-    },
+    
     {
       plan: 'Diamond Plan',
       price: '50,000',
