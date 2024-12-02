@@ -87,7 +87,7 @@ const WICDCard = ({ name, price, description, features, softwareUsed, imageUrl }
           </div>
         )}
       </div>
-      <button className="mt-2 bg-indigo-600 text-white py-1 px-2 rounded-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center text-sm">
+      <button onClick={() => window.location.href = 'https://satpros.in/shop/'} className="mt-2 bg-indigo-600 text-white py-1 px-2 rounded-lg hover:bg-indigo-700 transition duration-300 flex items-center justify-center text-sm">
         View Demo 
         <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
           <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
