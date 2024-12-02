@@ -103,16 +103,17 @@ const WICDShowcase = () => {
   const [wicds, setWicds] = useState([]);
 
   const carouselData = [
-    {
-      image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0",
-      title: "Professional Broadcasting Solutions",
-      description: "Transform your content with our cutting-edge broadcasting tools"
-    },
+    
     {
       image: "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
       title: "Stream Like a Pro",
       description: "Enterprise-grade streaming solutions for every creator"
     },
+    {
+        image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0",
+        title: "Professional Broadcasting Solutions",
+        description: "Transform your content with our cutting-edge broadcasting tools"
+      },
     {
       image: "https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b",
       title: "Next-Gen Technology",
@@ -123,7 +124,7 @@ const WICDShowcase = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselData.length);
-    }, 3000); // 500ms = 0.5 seconds
+    }, 4000); // 500ms = 0.5 seconds
 
     return () => clearInterval(timer);
   }, []);
