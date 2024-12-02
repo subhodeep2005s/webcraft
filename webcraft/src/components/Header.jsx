@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
-import { Menu, X, Home, Briefcase, Users, Mail, Settings } from 'lucide-react';
+import { Menu, X, Home, Briefcase, Users, Mail, Settings,ArrowBigRight } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
     { name: 'Testimonials', to: 'testimonials', icon: <Users className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Contact', to: 'contact', icon: <Mail className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Admin', to: '/admin', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
-    { name: 'Satpros', to: '/satpros', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
+    { name: 'Satpros', to: '/satpros', icon: <ArrowBigRight className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
 
 
   ];
@@ -108,7 +108,7 @@ const Header = () => {
           <div className="mt-6">
             <nav className="grid gap-y-8">
               {navItems.map((item) => (
-                item.name === 'Admin' ? (
+                item.name === 'Admin' || item.name === 'Satpros'   ? (
                   <RouterLink
                     key={item.name}
                     to={item.to}
