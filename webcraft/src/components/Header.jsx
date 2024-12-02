@@ -26,6 +26,9 @@ const Header = () => {
     { name: 'Testimonials', to: 'testimonials', icon: <Users className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Contact', to: 'contact', icon: <Mail className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
     { name: 'Admin', to: '/admin', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
+    { name: 'Satpros', to: '/satpros', icon: <Settings className="flex-shrink-0 h-6 w-6 text-indigo-600" /> },
+
+
   ];
 
   return (
@@ -50,7 +53,7 @@ const Header = () => {
           </div>
           <nav className="hidden md:flex space-x-10">
             {navItems.map((item) => (
-              item.name === 'Admin' ? (
+               item.name === 'Admin' || item.name === 'Satpros' ? (
                 <RouterLink
                   key={item.name}
                   to={item.to}
