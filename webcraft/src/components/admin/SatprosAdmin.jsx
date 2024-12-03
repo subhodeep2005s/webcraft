@@ -18,7 +18,7 @@ const SatprosAdmin = () => {
 
   const fetchWicds = async () => {
     try {
-      const response = await fetch('https://webcraft-backend-file.onrender.com/api/wicds');
+      const response = await fetch('https://backend-agency.onrender.com/api/wicds');
       if (response.ok) {
         const data = await response.json();
         setWicds(data);
@@ -61,7 +61,7 @@ const SatprosAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:8000/api/wicds', {
+      const response = await fetch('https://backend-agency.onrender.com/api/wicds', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newWicd),

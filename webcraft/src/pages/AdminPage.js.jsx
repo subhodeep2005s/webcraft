@@ -478,7 +478,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SatprosAdmin from '../components/admin/SatprosAdmin';
 import HeroAdmin from '../components/admin/HeroAdmin';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://backend-agency.onrender.com/api';
 
 const AdminPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

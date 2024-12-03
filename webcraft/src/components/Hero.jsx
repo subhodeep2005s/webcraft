@@ -54,26 +54,56 @@
 // };
 
 // export default Hero;
-
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, MessageCircle, Phone, Briefcase } from 'lucide-react';
 import CallbackForm from './CallbackForm';
 
 const Hero = () => {
   const [isCallbackFormOpen, setIsCallbackFormOpen] = useState(false);
+  const [heroData, setHeroData] = useState({
+    mainTitle: 'CREATIVE DIGITAL',
+    subTitle: 'BRANDING AGENCY',
+    ourStory: 'A specialized agency that helps businesses establish and maintain a strong online presence. This type of agency offers a range of services.',
+    experience: '12+',
+    projects: '800+',
+    happyClients: '500+',
+    imageUrl: 'https://designhub.digital/wp-content/uploads/2023/08/designhub-hero-product1.png'
+  });
+
+  useEffect(() => {
+    const fetchHeroData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/hero');
+        if (response.ok) {
+          const data = await response.json();
+          setHeroData({
+            mainTitle: data.mainTitle || heroData.mainTitle,
+            subTitle: data.subTitle || heroData.subTitle,
+            ourStory: data.ourStory || heroData.ourStory,
+            experience: data.experience || heroData.experience,
+            projects: data.projects || heroData.projects,
+            happyClients: data.happyClients || heroData.happyClients,
+            imageUrl: data.imageUrl || heroData.imageUrl
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching hero data:', error);
+      }
+    };
+
+    fetchHeroData();
+  }, []);
 
   // Function to handle scroll on "Know More" button click
   const handleScrollDown = () => {
-    const targetSection = document.getElementById('services'); // Target the section by its ID
+    const targetSection = document.getElementById('services');
     if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' }); // Scroll with smooth animation
+      targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div className="bg-white">
-      {/* You can adjust the top padding here to increase/decrease the space above the hero section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
         <div className="relative">
           {/* Background decorative elements */}
@@ -86,15 +116,16 @@ const Hero = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900">
-                  CREATIVE <span className="text-[#6366f1]">DIGITAL</span>
+                  {heroData.mainTitle.split(' ').map((word, index) => 
+                    index === 1 ? <span key={index} className="text-[#6366f1]">{word} </span> : word + ' '
+                  )}
                 </h1>
                 <h2 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-8">
-                  BRANDING AGENCY
+                  {heroData.subTitle}
                 </h2>
                 <h3 className="text-2xl font-bold">Our story</h3>
                 <p className="text-gray-600 max-w-lg">
-                  A specialized agency that helps businesses establish and maintain a strong online presence.
-                  This type of agency offers a range of services.
+                  {heroData.ourStory}
                 </p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                   <a
@@ -118,15 +149,15 @@ const Hero = () => {
 
               <div className="grid grid-cols-3 gap-4 sm:gap-8">
                 <div>
-                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">12<span className="text-xl sm:text-2xl">+</span></h4>
+                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">{heroData.experience}<span className="text-xl sm:text-2xl">+</span></h4>
                   <p className="text-sm sm:text-base text-gray-600">Years Experience</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">800<span className="text-xl sm:text-2xl">+</span></h4>
+                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">{heroData.projects}<span className="text-xl sm:text-2xl">+</span></h4>
                   <p className="text-sm sm:text-base text-gray-600">Projects Done</p>
                 </div>
                 <div>
-                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">500<span className="text-xl sm:text-2xl">+</span></h4>
+                  <h4 className="text-3xl sm:text-4xl font-bold text-[#6366f1]">{heroData.happyClients}<span className="text-xl sm:text-2xl">+</span></h4>
                   <p className="text-sm sm:text-base text-gray-600">Happy Clients</p>
                 </div>
               </div>
@@ -135,7 +166,7 @@ const Hero = () => {
             <div className="relative h-[400px] lg:h-full mt-8 lg:mt-0">
               <div className="absolute inset-0 bg-gradient-to-b from-gray-100 to-white rounded-lg overflow-hidden">
                 <img
-                  src="https://designhub.digital/wp-content/uploads/2023/08/designhub-hero-product1.png"
+                  src={heroData.imageUrl}
                   alt="Responsive web design showcase across multiple devices"
                   className="w-full h-full object-cover object-center"
                 />
@@ -149,7 +180,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <button 
-                    onClick={handleScrollDown} // Add the scroll function here
+                    onClick={handleScrollDown}
                     className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#6366f1] hover:bg-[#4f46e5]"
                   >
                     Know More
@@ -171,3 +202,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
