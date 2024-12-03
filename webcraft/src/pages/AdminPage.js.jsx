@@ -673,6 +673,7 @@ const AdminPage = () => {
         cursor: 'pointer',
         fontSize: '14px',
       },
+      // all good
     },
     content: {
       maxWidth: '800px',
