@@ -5,6 +5,8 @@ import Portfolio from '../components/Porrtfolio';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Pricing from '../components/Pricing';
+import WhyChooseUs from '../components/WhyChooseUs';
+import OurPromise from '../components/OurPromise';
 
 function Home() {
   return (
@@ -13,6 +15,8 @@ function Home() {
       <Services />
       <Pricing />
       <Portfolio />
+      <WhyChooseUs />
+      <OurPromise />
       <Testimonials />
       <Contact />
     </>
