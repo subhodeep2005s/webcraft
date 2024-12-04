@@ -36,10 +36,14 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer">
+            {/* <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer">
               <span className="sr-only  ">WebCraft Agency</span>
               <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-600' : 'text-indigo-600'}`}>WebCraft</span>
-            </ScrollLink>
+            </ScrollLink> */}
+              <RouterLink to="/" className="cursor-pointer">
+    <span className="sr-only">WebCraft Agency</span> {/* Hidden for screen readers */}
+    <span className={`text-2xl font-bold ${isScrolled ? 'text-indigo-600' : 'text-indigo-600'}`}>WebCraft</span>
+  </RouterLink>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
             <button

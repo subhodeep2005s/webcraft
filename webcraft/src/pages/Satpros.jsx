@@ -388,7 +388,7 @@ const WICDShowcase = () => {
     const fetchWicds = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('http://localhost:8000/api/wicds');
+        const response = await fetch('https://backend-agency.onrender.com/api/wicds');
         if (!response.ok) {
           throw new Error('Failed to fetch WICD items');
         }
